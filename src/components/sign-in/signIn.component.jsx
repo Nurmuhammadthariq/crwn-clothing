@@ -4,8 +4,7 @@ import FormInput from '../form-input/formInput.component'
 import CustomButton from '../custom-button/customButton.component'
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
-
-import './sign-in.styles.scss'
+import { SignInContainer, ButtonBarContainer } from './sign-in.styles'
 
 class signIn extends Component {
   constructor(props) {
@@ -38,7 +37,7 @@ class signIn extends Component {
 
   render() {
     return (
-      <div className='sign-in'>
+      <SignInContainer>
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
@@ -59,14 +58,14 @@ class signIn extends Component {
             label='password'
             required
           />
-          <div className='buttons'>
+          <ButtonBarContainer>
             <CustomButton type='submit'>Sign in</CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
               Sign in With Google
             </CustomButton>
-          </div>
+          </ButtonBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     )
   }
 }

@@ -5,7 +5,7 @@ import CustomButton from '../custom-button/customButton.component'
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 
-import './signIn.styles.scss'
+import { SignUpContainer, SignUpTitle } from './sign-up.styles'
 
 class SignUp extends Component {
   constructor() {
@@ -58,8 +58,8 @@ class SignUp extends Component {
     const { displayName, email, password, confirmPassword } = this.state
 
     return (
-      <div className='sign-up'>
-        <h2 className='title'>I don't have a account</h2>
+      <SignUpContainer>
+        <SignUpTitle>I don't have a account</SignUpTitle>
         <span>Sign Up with your email and password</span>
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
           <FormInput
@@ -96,7 +96,7 @@ class SignUp extends Component {
           />
           <CustomButton type='submit'>Sign Up</CustomButton>
         </form>
-      </div>
+      </SignUpContainer>
     )
   }
 }
